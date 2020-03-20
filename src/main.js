@@ -1,30 +1,31 @@
-import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js'; 
 
 import {
   filterByType,
 } from './data.js';
 
-const pokemonRow = document.querySelector('.stack');
+const mainContainer = document.querySelector('.stack');
 
-const showPokemon = (arr) => {
-  arr.forEach((obj) => {
+const showPokemon = (pokemonList) => {
+  pokemonList.forEach((pokemon) => {
     const pokemonCard = document.createElement('div');
     pokemonCard.classList.add('pokemon-card');
     pokemonCard.innerHTML = `
-        <div class="pokemon-number">${obj.num}</div>
-        <div class="pokemon-image"><img src = ${obj.img} class="pokemon-pic"></div>
-        <div class= "pokemon-name">${obj.name}</div>
+        <div class="pokemon-number">${pokemon.num}</div>
+        <div class="pokemon-image"><img src = ${pokemon.img} class="pokemon-pic" alt="pokemon picture"></div>
+        <div class= "pokemon-name">${pokemon.name}</div>
         `;
-    pokemonRow.appendChild(pokemonCard);
+    mainContainer.appendChild(pokemonCard);
   });
 };
 
 showPokemon(data.pokemon);
 
-const orderByType = document.querySelector('#order-by-type');
+const showByType = document.querySelector('#order-by-type');
 
-orderByType.addEventListener('change', () => {
-  const chosenType = orderByType.value;
-  console.log({chosenType});
+showByType.addEventListener('change', () => {
+  const chosenType = showByType.value;
+  mainContainer.innerHTML = '';
   showPokemon(filterByType(data.pokemon, chosenType));
+  console.log({chosenType});
 });
