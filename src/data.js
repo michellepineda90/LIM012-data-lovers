@@ -1,5 +1,2 @@
-// estas funciones son de ejemplo
-
-export const example = () => 'example';
-
-export const anotherExample = () => 'OMG';
+export const filterByType = (pokemonList, type) => pokemonList.filter(pokemon => pokemon.type.includes(type));
+};
