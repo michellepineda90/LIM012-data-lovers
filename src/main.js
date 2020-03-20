@@ -28,4 +28,3 @@ orderByType.addEventListener('change', () => {
   const chosenType = orderByType.value;
   showPokemon(filterByType(data.pokemon, chosenType));
 });
-© 2020 GitHub, Inc.
