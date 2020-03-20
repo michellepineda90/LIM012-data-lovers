@@ -58,6 +58,10 @@ body {
     margin: auto;
 }
 
+.hide{
+    display: none;
+}
+
 /* grid system - mobile first */
 
 .logo-image{

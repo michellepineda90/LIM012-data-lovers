@@ -8,7 +8,7 @@ describe('filterByType', () => {
   });
 
   it('returns `example`', () => {
-    expect(example()).toBe('example');
+    expect(filterByType()).toBe('example');
   });
 });
 
