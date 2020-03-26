@@ -12,11 +12,7 @@ html {
 }
 
 body {
-<<<<<<< HEAD
-    background: url(img/background-hero.png);
-=======
     background: url(https://i.ibb.co/BjxjLLF/background-pokemon.png);
->>>>>>> 48a1237fc36b5c1e703b668389b77e2793148253
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
