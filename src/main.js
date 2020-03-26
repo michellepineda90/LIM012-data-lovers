@@ -42,16 +42,6 @@ orderAlphabetically.addEventListener('change', () => {
   showPokemon(byAlphabeticalOrder(data.pokemon, selectedOrder));
 });
 
-const input = document.getElementById('search-by-name');
-const searchBtn = document.querySelector('.button-holder');
-
-const expand = () => {
-  searchBtn.classList.toggle('close');
-  input.classList.toggle('square');
-};
-
-searchBtn.addEventListener('click', expand);
-
 const searchByName = document.querySelector('.button-holder');
 const chosenName = document.getElementById('search-by-name');
 
