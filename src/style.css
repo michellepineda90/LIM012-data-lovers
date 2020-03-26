@@ -43,10 +43,6 @@ body {
     justify-content: space-evenly;
 }
 
-.single {
-    justify-content: start;
-}
-
 .pokemon-card {
     display: flex;
     flex-flow: column nowrap;

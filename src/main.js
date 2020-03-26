@@ -47,7 +47,6 @@ const searchByName = document.querySelector('#search-by-name');
 searchByName.addEventListener('change', () => {
   const pokemonName = searchByName.value;
   mainContainer.innerHTML = '';
-  mainContainer.classList.add('single');
   showPokemon(byName(data.pokemon, pokemonName));
 });
 
