@@ -42,11 +42,23 @@ orderAlphabetically.addEventListener('change', () => {
   showPokemon(byAlphabeticalOrder(data.pokemon, selectedOrder));
 });
 
-const searchByName = document.querySelector('#search-by-name');
+const input = document.getElementById('search-by-name');
+const searchBtn = document.querySelector('.button-holder');
 
-searchByName.addEventListener('submit', (event) => {
+const expand = () => {
+  searchBtn.classList.toggle('close');
+  input.classList.toggle('square');
+};
+
+searchBtn.addEventListener('click', expand);
+
+const searchByName = document.querySelector('.button-holder');
+const chosenName = document.getElementById('search-by-name');
+
+searchByName.addEventListener('change', (event) => {
   event.preventDefault();
-  const pokemonName = searchByName.value.toLowerCase();
+  const pokemonName = chosenName.value.toLowerCase();
+  console.log({pokemonName});
   mainContainer.innerHTML = '';
   showPokemon(byName(data.pokemon, pokemonName));
   if (mainContainer.innerHTML == 0) {
