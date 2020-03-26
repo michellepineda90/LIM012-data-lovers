@@ -44,7 +44,8 @@ orderAlphabetically.addEventListener('change', () => {
 
 const searchByName = document.querySelector('#search-by-name');
 
-searchByName.addEventListener('change', () => {
+searchByName.addEventListener('submit', (event) => {
+  event.preventDefault();
   const pokemonName = searchByName.value.toLowerCase();
   mainContainer.innerHTML = '';
   showPokemon(byName(data.pokemon, pokemonName));
@@ -58,11 +59,11 @@ searchByName.addEventListener('change', () => {
   }
 });
 
-const mobileSearch = document.querySelector('.search');
+// const mobileSearch = document.querySelector('.search');
 
-mobileSearch.addEventListener('click', () => {
+// mobileSearch.addEventListener('click', () => {
 
-});
+// });
 
 const originalState = document.getElementById('logo-image');
 
