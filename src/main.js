@@ -4,7 +4,7 @@ import {
   byType,
   byAlphabeticalOrder,
   byName,
-} from './data.js';
+} from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
 
@@ -29,6 +29,9 @@ showByType.addEventListener('change', () => {
   const chosenType = showByType.value;
   mainContainer.innerHTML = '';
   showPokemon(byType(data.pokemon, chosenType));
+  if (chosenType === 'all-types') {
+    showPokemon(data.pokemon);
+  }
 });
 
 const orderAlphabetically = document.querySelector('#order-alphabetically');
@@ -46,4 +49,12 @@ searchByName.addEventListener('change', () => {
   mainContainer.innerHTML = '';
   mainContainer.classList.add('single');
   showPokemon(byName(data.pokemon, pokemonName));
+});
+
+const originalState = document.getElementById('logo-image');
+
+originalState.addEventListener('click', (event) => {
+  event.preventDefault();
+  mainContainer.innerHTML = '';
+  showPokemon(data.pokemon);
 });
