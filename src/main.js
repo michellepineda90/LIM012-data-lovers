@@ -1,8 +1,10 @@
-import data from './data/pokemon/pokemon.js'; 
+import data from './data/pokemon/pokemon.js';
 
 import {
-  filterByType,
-} from './data.js';
+  byType,
+  byAlphabeticalOrder,
+  byName,
+} from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
 
@@ -26,6 +28,32 @@ const showByType = document.querySelector('#order-by-type');
 showByType.addEventListener('change', () => {
   const chosenType = showByType.value;
   mainContainer.innerHTML = '';
-  showPokemon(filterByType(data.pokemon, chosenType));
-  console.log({chosenType});
+  showPokemon(byType(data.pokemon, chosenType));
+  if (chosenType === 'all-types') {
+    showPokemon(data.pokemon);
+  }
+});
+
+const orderAlphabetically = document.querySelector('#order-alphabetically');
+
+orderAlphabetically.addEventListener('change', () => {
+  const selectedOrder = orderAlphabetically.value;
+  mainContainer.innerHTML = '';
+  showPokemon(byAlphabeticalOrder(data.pokemon, selectedOrder));
+});
+
+const searchByName = document.querySelector('#search-by-name');
+
+searchByName.addEventListener('change', () => {
+  const pokemonName = searchByName.value;
+  mainContainer.innerHTML = '';
+  showPokemon(byName(data.pokemon, pokemonName));
+});
+
+const originalState = document.getElementById('logo-image');
+
+originalState.addEventListener('click', (event) => {
+  event.preventDefault();
+  mainContainer.innerHTML = '';
+  showPokemon(data.pokemon);
 });
