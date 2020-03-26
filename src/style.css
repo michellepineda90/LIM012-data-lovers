@@ -91,6 +91,17 @@ body {
     display: none;
 }
 
+.error-message {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.error-icon {
+    width:100%;
+    max-width: 64px;
+}
+
 /* grid system - mobile first */
 
 .logo-image {
@@ -118,10 +129,18 @@ body {
     display: none;
 }
 
-.magnifying-glass {
+.search {
     height: 40px;
     width: 40px;
     margin-left: 8%;
+}
+
+.error-message {
+    flex-flow: column wrap;
+    font-size: 1em;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 36%;
 }
 
 .stack {
@@ -189,10 +208,16 @@ body {
         margin-left: 4%;
     }
 
-    .magnifying-glass {
+    .search {
         height: 90%;
         width: 4%;
         margin-left: 0;
+    }
+
+    .error-message {
+        flex-flow: row nowrap;
+        font-size: 1.5em;
+        margin-top: 4%;
     }
 
     .stack {

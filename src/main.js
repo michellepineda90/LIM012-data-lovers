@@ -45,10 +45,20 @@ orderAlphabetically.addEventListener('change', () => {
 const searchByName = document.querySelector('#search-by-name');
 
 searchByName.addEventListener('change', () => {
-  const pokemonName = searchByName.value;
+  const pokemonName = searchByName.value.toLowerCase();
   mainContainer.innerHTML = '';
   showPokemon(byName(data.pokemon, pokemonName));
+  if (mainContainer.innerHTML == 0) {
+    mainContainer.innerHTML = `
+    <div class="error-message">
+      <img src="./img/error.png" alt="error icon" class="error-icon"/>
+      <p>Lo sentimos, tu búsqueda no ha generado ningún resultado.</p>
+    </div>
+    `;
+  }
 });
+
+const mobileSearch = document.querySelector('.search');
 
 const originalState = document.getElementById('logo-image');
 
