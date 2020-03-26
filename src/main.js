@@ -60,6 +60,10 @@ searchByName.addEventListener('change', () => {
 
 const mobileSearch = document.querySelector('.search');
 
+mobileSearch.addEventListener('click', () => {
+
+});
+
 const originalState = document.getElementById('logo-image');
 
 originalState.addEventListener('click', (event) => {
