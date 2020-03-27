@@ -1,9 +1,9 @@
 import data from './data/pokemon/pokemon.js';
 
 import {
-  byType,
-  byAlphabeticalOrder,
-  byName,
+  filterByType,
+  orderAlphabetically,
+  searchByName,
 } from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
@@ -28,18 +28,18 @@ const showByType = document.querySelector('#order-by-type');
 showByType.addEventListener('change', () => {
   const chosenType = showByType.value;
   mainContainer.innerHTML = '';
-  showPokemon(byType(data.pokemon, chosenType));
+  showPokemon(filterByType(data.pokemon, chosenType));
   if (chosenType === 'all-types') {
     showPokemon(data.pokemon);
   }
 });
 
-const orderAlphabetically = document.querySelector('#order-alphabetically');
+const orderAlphabeticallySelect = document.querySelector('#order-alphabetically');
 
-orderAlphabetically.addEventListener('change', () => {
+orderAlphabeticallySelect.addEventListener('change', () => {
   const selectedOrder = orderAlphabetically.value;
   mainContainer.innerHTML = '';
-  showPokemon(byAlphabeticalOrder(data.pokemon, selectedOrder));
+  showPokemon(orderAlphabetically(data.pokemon, selectedOrder));
 });
 
 const image = document.querySelector('img');
@@ -58,7 +58,7 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   const pokemonName = chosenName.value.toLowerCase();
   mainContainer.innerHTML = '';
-  showPokemon(byName(data.pokemon, pokemonName));
+  showPokemon(searchByName(data.pokemon, pokemonName));
   if (!mainContainer.innerHTML) {
     mainContainer.innerHTML = `
     <div class="error-message">

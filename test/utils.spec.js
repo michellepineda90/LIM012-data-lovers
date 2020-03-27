@@ -1,7 +1,7 @@
 import {
-  byAlphabeticalOrder,
-  byType,
-  byName,
+  orderAlphabetically,
+  filterByType,
+  searchByName,
 } from '../src/utils.js';
 
 const dummyPokemonList = [
@@ -66,36 +66,36 @@ const bugPokemonList = [
   },
 ];
 
-describe('byAlphabeticalOrder', () => {
+describe('orderAlphabetically', () => {
   it('is a function', () => {
-    expect(typeof byAlphabeticalOrder).toBe('function');
+    expect(typeof orderAlphabetically).toBe('function');
   });
 
   it('returns an array of objects ordered alphabetically in ascending order', () => {
-    expect(byAlphabeticalOrder(dummyPokemonList, 'ascending')).toEqual(pokemonListAsc);
+    expect(orderAlphabetically(dummyPokemonList, 'ascending')).toEqual(pokemonListAsc);
   });
 
   it('returns an array of objects ordered alphabetically in descending order', () => {
-    expect(byAlphabeticalOrder(dummyPokemonList, 'descending')).toEqual(pokemonListDesc);
+    expect(orderAlphabetically(dummyPokemonList, 'descending')).toEqual(pokemonListDesc);
   });
 });
 
-describe('byType', () => {
+describe('filterByType', () => {
   it('is a function', () => {
-    expect(typeof byType).toBe('function');
+    expect(typeof filterByType).toBe('function');
   });
 
   it('returns an array of objects containing only the pokemon with the chosen type', () => {
-    expect(byType(dummyPokemonList, 'bug')).toEqual(bugPokemonList);
+    expect(filterByType(dummyPokemonList, 'bug')).toEqual(bugPokemonList);
   });
 });
 
-describe('byName', () => {
+describe('searchByName', () => {
   it('is a function', () => {
-    expect(typeof byName).toBe('function');
+    expect(typeof searchByName).toBe('function');
   });
 
   it('returns an array of objects containing only the pokemon with the chosen name', () => {
-    expect(byName(dummyPokemonList, 'caterpie')).toEqual(bugPokemonList);
+    expect(searchByName(dummyPokemonList, 'caterpie')).toEqual(bugPokemonList);
   });
 });
