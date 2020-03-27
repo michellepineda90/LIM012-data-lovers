@@ -42,16 +42,24 @@ orderAlphabetically.addEventListener('change', () => {
   showPokemon(byAlphabeticalOrder(data.pokemon, selectedOrder));
 });
 
-const searchByName = document.querySelector('.button-holder');
+const image = document.querySelector('img');
+
+image.addEventListener('click', (clickEvent) => {
+  const domEvent = document.createEvent('Event');
+  domEvent.initEvent('submit', false, true);
+  clickEvent.target.closest('form').dispatchEvent(domEvent);
+});
+
+const form = document.querySelector('.search-form');
+
 const chosenName = document.getElementById('search-by-name');
 
-searchByName.addEventListener('change', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
   const pokemonName = chosenName.value.toLowerCase();
-  console.log({pokemonName});
   mainContainer.innerHTML = '';
   showPokemon(byName(data.pokemon, pokemonName));
-  if (mainContainer.innerHTML == 0) {
+  if (!mainContainer.innerHTML) {
     mainContainer.innerHTML = `
     <div class="error-message">
       <img src="./img/error.png" alt="error icon" class="error-icon"/>
@@ -61,16 +69,9 @@ searchByName.addEventListener('change', (event) => {
   }
 });
 
-// const mobileSearch = document.querySelector('.search');
-
-// mobileSearch.addEventListener('click', () => {
-
-// });
-
 const originalState = document.getElementById('logo-image');
 
-originalState.addEventListener('click', (event) => {
-  event.preventDefault();
+originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });

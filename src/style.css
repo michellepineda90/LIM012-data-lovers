@@ -191,7 +191,7 @@ body {
 
 /* Desktop screen sizes */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px){
 
     .logo-image{
         width: 100%;
