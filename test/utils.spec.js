@@ -58,6 +58,17 @@ const pokemonListDesc = [
   },
 ];
 
+const testSameLetter = [
+  {
+    name: 'nidoran',
+    type: 'poison',
+  },
+  {
+    name: 'nidoran',
+    type: 'poison',
+  },
+];
+
 const bugPokemonList = [
   {
     num: 10,
@@ -77,6 +88,14 @@ describe('orderAlphabetically', () => {
 
   it('returns an array of objects ordered alphabetically in descending order', () => {
     expect(orderAlphabetically(dummyPokemonList, 'descending')).toEqual(pokemonListDesc);
+  });
+
+  it('returns an array of objects ordered alphabetically in ascending order unchanged', () => {
+    expect(orderAlphabetically(testSameLetter, 'ascending')).toEqual(testSameLetter);
+  });
+
+  it('returns an array of objects ordered alphabetically in descending order unchanged', () => {
+    expect(orderAlphabetically(testSameLetter, 'descending')).toEqual(testSameLetter);
   });
 });
 

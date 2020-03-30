@@ -199,6 +199,7 @@ body {
         margin-left: 37.5%;
         margin-top: 2%;
         margin-bottom: 0;
+        cursor: pointer;
     }
 
     .filter-bar {
