@@ -6,17 +6,65 @@ import {
   searchByName,
 } from './utils.js';
 
+
 const mainContainer = document.querySelector('.stack');
+
+// const evolutionsArray = pokemon['next-evolution'];
+// const weaknessesArray = pokemon.weaknesses;
+
+const showMorePokemonInfo = pokemon => () => {
+  const modalBlock = document.createElement('div');
+  modalBlock.classList.add('modal-block');
+  modalBlock.innerHTML = `
+  <div class="modal-section">
+    <span id="close" class="close">x</span>
+    <section class="modal-pokemon">
+      <div class="box">
+        <div class="modal-pokemon-image">
+          <img src="${pokemon.img}" class="pokemon-big-image">
+        </div>
+        <div class="modal-pokemon-name">
+          <h1 class="pokemon-big-name">${pokemon.name}</h1>
+        </div>
+      </div>
+    </section>
+    <section class="modal-stats">
+      <div class="block-1">
+        <div class="modal-resistance">
+          <p class="resistance-tag">RESISTANCE</p>
+        </div>
+        <div class="resistance-detail">
+          <p>${pokemon.resistant}</p>
+          <img class="type-image">
+        </div>
+      </div>
+      <div class="block-2">
+        <div class="modal-weakness">
+          <p class="weakness-tag">WEAKNESSES</p>
+        </div>
+        <div class="weakness-detail">
+          <p>${pokemon.weaknesses}</p>
+          <img class="type-image">
+        </div>
+      </div>
+    </section>
+    <section class="modal-movesets"></section>
+  </div>
+  `;
+  mainContainer.appendChild(modalBlock);
+};
 
 const showPokemon = (pokemonList) => {
   pokemonList.forEach((pokemon) => {
     const pokemonCard = document.createElement('div');
     pokemonCard.classList.add('pokemon-card');
     pokemonCard.innerHTML = `
-        <div class="pokemon-number">${pokemon.num}</div>
+        <p class="pokemon-number">${pokemon.num}</p>
         <div class="pokemon-image"><img src = ${pokemon.img} class="pokemon-pic" alt="pokemon picture"></div>
-        <div class= "pokemon-name">${pokemon.name}</div>
+        <p class= "pokemon-name">${pokemon.name}</p>
         `;
+    const handleClick = showMorePokemonInfo(pokemon);
+    pokemonCard.addEventListener('click', handleClick);
     mainContainer.appendChild(pokemonCard);
   });
 };
@@ -42,7 +90,7 @@ orderAlphabeticallySelect.addEventListener('change', () => {
   showPokemon(orderAlphabetically(data.pokemon, selectedOrder));
 });
 
-const image = document.querySelector('img');
+const image = document.querySelector('.magnifying-glass');
 
 image.addEventListener('click', (clickEvent) => {
   const domEvent = document.createEvent('Event');
