@@ -45,6 +45,9 @@ const showMorePokemonInfo = pokemon => () => {
       <section class="modal-stats">
         ${resistanceWeaknesses(pokemon)}
       </section>
+      <section class="modal-stats">
+        ${resistanceWeaknesses(pokemon)}
+      </section>
       <section class="modal-movesets"></section>
     </div>
   `;
