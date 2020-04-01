@@ -56,7 +56,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333333;
+    color: #0A5C0D;;
     width: auto;
     height: auto;
 }
@@ -81,7 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-items: center;
-    color: #333333;
+    color: #0A5C0D;
     text-transform: uppercase;
 }
 
@@ -129,6 +129,16 @@ body {
     margin: auto;
     border-radius: 50px;
     flex-direction: column;
+}
+
+.pokemon-big-name {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #0A5C0D;
+}
+
+.close {
+    /* close button on more info modal */
 }
 
 /* grid system - mobile first */
