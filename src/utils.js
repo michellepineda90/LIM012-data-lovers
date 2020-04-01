@@ -1,6 +1,6 @@
-export const byType = (arr, type) => arr.filter(obj => obj.type.includes(type));
+export const filterByType = (arr, type) => arr.filter(obj => obj.type.includes(type));
 
-export const byAlphabeticalOrder = (arr, condition) => {
+export const orderAlphabetically = (arr, condition) => {
   const newArr = arr.slice();
   newArr.sort((a, b) => {
     if (a.name < b.name) {
@@ -17,4 +17,4 @@ export const byAlphabeticalOrder = (arr, condition) => {
   return newArr;
 };
 
-export const byName = (arr, name) => arr.filter(obj => obj.name.includes(name));
+export const searchByName = (arr, name) => arr.filter(obj => obj.name.includes(name));
