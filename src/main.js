@@ -12,40 +12,17 @@ const showMorePokemonInfo = pokemon => () => {
   const modalBlock = document.createElement('div');
   modalBlock.classList.add('modal-block');
   modalBlock.innerHTML = `
-  <div class="modal-section">
-    <span id="close" class="close">x</span>
-    <section class="modal-pokemon">
-      <div class="box">
-        <div class="modal-pokemon-image">
-          <img src="${pokemon.img}" class="pokemon-big-image">
-        </div>
-        <div class="modal-pokemon-name">
-          <h1 class="pokemon-big-name">${pokemon.name}</h1>
-        </div>
-      </div>
-    </section>
-    <section class="modal-stats">
-      <div class="block-1">
-        <div class="modal-resistance">
-          <p class="resistance-tag">RESISTANCE</p>
-        </div>
-        <div class="resistance-detail">
-          <p>${pokemon.resistant}</p>
-          <img class="type-image">
-        </div>
-      </div>
-      <div class="block-2">
-        <div class="modal-weakness">
-          <p class="weakness-tag">WEAKNESSES</p>
-        </div>
-        <div class="weakness-detail">
-          <p>${pokemon.weaknesses}</p>
-          <img class="type-image">
-        </div>
-      </div>
-    </section>
-    <section class="modal-movesets"></section>
-  </div>
+    <div id="modal-section" class="modal-section">
+      <a class="closePopup" href="#"><span class="close">x</span></a>
+      <section class="modal-pokemon">
+        <img src="${pokemon.img}" class="pokemon-big-image">
+        <h1 class="pokemon-big-name">${pokemon.name}</h1>
+      </section>
+      <section class="modal-stats">
+        ${resistanceWeaknesses(pokemon)}
+      </section>
+      <section class="modal-movesets"></section>
+    </div>
   `;
   mainContainer.appendChild(modalBlock);
 };
@@ -120,3 +97,28 @@ originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });
+
+const resistanceWeaknesses = (pokemon) => {
+
+  let resistanceWeaknesses = '';
+  let resistanceList = '';
+  let weaknessesList = '';
+  
+  pokemon.resistant.forEach((elemResistance) => {
+    resistanceList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemResistance}.png"/>`;
+  });
+  pokemon.weaknesses.forEach((elemWeaknesses) => {
+    weaknessesList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemWeaknesses}.png"/>`;
+  });
+  resistanceWeaknesses += `
+    <div class="res-weak">
+      <p class="modal-resistance">RESISTANCE</p>
+      <div>${resistanceList}</div>
+    </div>
+    <div class="res-weak">
+      <p class="modal-weakness">WEAKNESSES</p>
+      <div>${weaknessesList}</div>
+    </div>
+  `;
+  return resistanceWeaknesses;
+};
