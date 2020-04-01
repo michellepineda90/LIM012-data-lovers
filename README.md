@@ -203,31 +203,31 @@ como para mobile.
 
 #### Prototipos para desktop
 
-  ![Desktop hu1-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu1-papel.png)
+  ![Desktop hu1-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu1-papel.PNG)
 
-  ![Desktop hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu2-papel.png)
+  ![Desktop hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu2-papel.PNG)
 
-  ![Desktop hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu3-papel.png)
+  ![Desktop hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu3-papel.PNG)
 
-  ![Desktop hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu4-papel.png)
+  ![Desktop hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu4-papel.PNG)
 
-  ![Desktop hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu5-papel.png)
+  ![Desktop hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu5-papel.PNG)
 
-  ![Desktop hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu6-papel.png)
+  ![Desktop hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu6-papel.PNG)
 
-#### Prototipos para desktop
+#### Prototipos para mobile
 
-  ![Mobile hu1-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu1-papel.png)
+  ![Mobile hu1-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu1-papel.PNG)
 
-  ![Mobile hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu2-papel.png)
+  ![Mobile hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu2-papel.PNG)
 
-  ![Mobile hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu3-papel.png)
+  ![Mobile hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu3-papel.PNG)
 
-  ![Mobile hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu4-papel.png)
+  ![Mobile hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu4-papel.PNG)
 
-  ![Mobile hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu5-papel.png)
+  ![Mobile hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu5-papel.PNG)
 
-  ![Mobile hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu6-papel.png)
+  ![Mobile hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu6-papel.PNG)
 
 
 ### Feedback recibido por usuarios
@@ -307,31 +307,31 @@ como para mobile.
 
 #### Prototipos para desktop
 
-  ![Desktop hu1-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu1-figma.png)
+  ![Desktop hu1-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu1-figma.PNG)
 
-  ![Desktop hu2-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu2-figma.png)
+  ![Desktop hu2-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu2-figma.PNG)
 
-  ![Desktop hu3-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu3-figma.png)
+  ![Desktop hu3-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu3-figma.PNG)
 
-  ![Desktop hu4-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu4-figma.png)
+  ![Desktop hu4-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu4-figma.PNG)
 
-  ![Desktop hu5-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu5-figma.png)
+  ![Desktop hu5-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu5-figma.PNG)
 
-  ![Desktop hu6-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu6-figma.png)
+  ![Desktop hu6-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/desk-hu6-figma.PNG)
 
 #### Prototipos para mobile
 
-  ![Mobile hu1-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu1-figma.png)
+  ![Mobile hu1-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu1-figma.PNG)
 
-  ![Mobile hu2-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu2-figma.png)
+  ![Mobile hu2-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu2-figma.PNG)
 
-  ![Mobile hu3-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu3-figma.png)
+  ![Mobile hu3-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu3-figma.PNG)
 
-  ![Mobile hu4-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu4-figma.png)
+  ![Mobile hu4-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu4-figma.PNG)
 
-  ![Mobile hu5-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu5-figma.png)
+  ![Mobile hu5-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu5-figma.PNG)
 
-  ![Mobile hu6-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu6-figma.png)
+  ![Mobile hu6-Figma](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mob-hu6-figma.PNG)
 
 
 ### Testeos de usabilidad
