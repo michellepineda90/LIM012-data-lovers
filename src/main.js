@@ -6,11 +6,7 @@ import {
   searchByName,
 } from './utils.js';
 
-
 const mainContainer = document.querySelector('.stack');
-
-// const evolutionsArray = pokemon['next-evolution'];
-// const weaknessesArray = pokemon.weaknesses;
 
 const showMorePokemonInfo = pokemon => () => {
   const modalBlock = document.createElement('div');
@@ -64,6 +60,7 @@ const showPokemon = (pokemonList) => {
         <p class= "pokemon-name">${pokemon.name}</p>
         `;
     const handleClick = showMorePokemonInfo(pokemon);
+    // helper function does currying transform
     pokemonCard.addEventListener('click', handleClick);
     mainContainer.appendChild(pokemonCard);
   });
