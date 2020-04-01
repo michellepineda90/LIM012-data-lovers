@@ -221,6 +221,8 @@ como para mobile.
 
   ![Mobile hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu2-papel.PNG)
 
+<<<<<<< HEAD
+=======
   ![Mobile hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu3-papel.PNG)
 
   ![Mobile hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu4-papel.PNG)
@@ -230,6 +232,7 @@ como para mobile.
   ![Mobile hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu6-papel.PNG)
 
 
+>>>>>>> 05a57bf7910405fac1c378cdbbc79a389878fc2d
 ### Feedback recibido por usuarios
 
 Entrevistamos a varios tipos de usuario para poder obtener un feedback más 
@@ -433,7 +436,7 @@ Trabajando en ello.
 
 * [x] Usa VanillaJS.
 * [x] No hace uso de `this`.
-* [ ] Pasa linter (`npm run pretest`)
+* [x] Pasa linter (`npm run pretest`)
 * [x] Pasa tests (`npm test`)
 * [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
@@ -471,18 +474,18 @@ Trabajando en ello.
 ### DOM
 
 - [x] Entender y reconocer los selectores del DOM (`querySelector` | `querySelectorAll`).
-- [ ] Manejar eventos del DOM. (`addEventListener`)
-- [ ] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
+- [x] Manejar eventos del DOM. (`addEventListener`)
+- [x] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
 
 ### Javascript
 
 - [x] Manipular arrays (`filter` | `map` | `sort` | `reduce`).
-- [ ] Manipular objects (key | value).
+- [x] Manipular objects (key | value).
 - [x] Entender el uso de condicionales (`if-else` | `switch`).
 - [x] Entender el uso de bucles (`for` | `forEach`).
 - [x] Entender la diferencia entre expression y statements.
 - [x] Utilizar funciones (`parámetros` | `argumentos` | `valor de retorno`).
-- [ ] Entender la diferencia entre tipos de datos atómicos y estructurados.
+- [x] Entender la diferencia entre tipos de datos atómicos y estructurados.
 - [x] Utilizar ES Modules (`import` | `export`).
 
 ### Pruebas Unitarias (_testing_)
@@ -491,9 +494,9 @@ Trabajando en ello.
 ### Git y GitHub
 - [x] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
 - [x] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
-- [ ] Colaborar en Github (`pull requests`).
+- [x] Colaborar en Github (`pull requests`).
 
 ### Buenas prácticas de desarrollo
 - [x] Organizar y dividir el código en módulos (Modularización).
 - [x] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
-- [ ] Utilizar linter para seguir buenas prácticas (ESLINT).
+- [x] Utilizar linter para seguir buenas prácticas (ESLINT).

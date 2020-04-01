@@ -65,6 +65,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #0A5C0D;;
     width: auto;
     height: auto;
     text-align: center;
@@ -225,6 +226,16 @@ p{
 
 .hide {
     display: none;
+}
+
+.pokemon-big-name {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #0A5C0D;
+}
+
+.close {
+    /* close button on more info modal */
 }
 
 /* grid system - mobile first */

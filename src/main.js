@@ -8,6 +8,30 @@ import {
 
 const mainContainer = document.querySelector('.stack');
 
+const resistanceWeaknesses = (pokemon) => {
+  let resistanceAndWeaknesses = '';
+  let resistanceList = '';
+  let weaknessesList = '';
+
+  pokemon.resistant.forEach((elemResistance) => {
+    resistanceList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemResistance}.png"/>`;
+  });
+  pokemon.weaknesses.forEach((elemWeaknesses) => {
+    weaknessesList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemWeaknesses}.png"/>`;
+  });
+  resistanceAndWeaknesses += `
+    <div class="res-weak">
+      <p class="modal-resistance">RESISTANCE</p>
+      <div>${resistanceList}</div>
+    </div>
+    <div class="res-weak">
+      <p class="modal-weakness">WEAKNESSES</p>
+      <div>${weaknessesList}</div>
+    </div>
+  `;
+  return resistanceAndWeaknesses;
+};
+
 const showMorePokemonInfo = pokemon => () => {
   const modalBlock = document.createElement('div');
   modalBlock.classList.add('modal-block');
@@ -100,28 +124,3 @@ originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });
-
-const resistanceWeaknesses = (pokemon) => {
-
-  let resistanceWeaknesses = '';
-  let resistanceList = '';
-  let weaknessesList = '';
-  
-  pokemon.resistant.forEach((elemResistance) => {
-    resistanceList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemResistance}.png"/>`;
-  });
-  pokemon.weaknesses.forEach((elemWeaknesses) => {
-    weaknessesList += `<img class="resist-weak-img" src="./img/types-pokemon/${elemWeaknesses}.png"/>`;
-  });
-  resistanceWeaknesses += `
-    <div class="res-weak">
-      <p class="modal-resistance">RESISTANCE</p>
-      <div>${resistanceList}</div>
-    </div>
-    <div class="res-weak">
-      <p class="modal-weakness">WEAKNESSES</p>
-      <div>${weaknessesList}</div>
-    </div>
-  `;
-  return resistanceWeaknesses;
-};
