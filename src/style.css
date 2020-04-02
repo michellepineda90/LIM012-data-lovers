@@ -158,6 +158,13 @@ body {
     left: 95%;
 }/**/
 
+.ocultar{visibility: hidden;}
+
+.mostrar{visibility: visible;}
+
+.hide{
+    display: none;}
+
 .modal-pokemon{
     display: flex;
     flex-flow: column nowrap;
@@ -336,8 +343,9 @@ p{
 
 .modal-section {
     width: 80%;
-    height: 80%;
+    height: 70%;
     border: 1.5px solid #000000;
+    top:110px;
 }
 
 h1{
@@ -346,7 +354,7 @@ h1{
 
 .modal-pokemon {
     width: 100%;
-    height: 20%;
+    height: 30%;
 }
 
 .pokemon-big-image{
