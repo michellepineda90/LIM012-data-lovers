@@ -29,9 +29,6 @@ const resistanceWeaknesses = (pokemon) => {
       <div>${weaknessesList}</div>
     </div>
   `;
-
-
-
   return resistanceAndWeaknesses;
 };
 
@@ -52,14 +49,15 @@ const showMorePokemonInfo = pokemon => () => {
     </div>
   `;
   mainContainer.appendChild(modalBlock);
-    const buttonExit = document.getElementById('close');
+  
+  const buttonExit = document.getElementById('close');
 
   if(buttonExit!=null){
-  buttonExit.addEventListener('click', () => {
-  modalBlock.classList.add('hide');
-  modalBlock.innerHTML = '';
-});
-};
+    buttonExit.addEventListener('click', () => {
+    modalBlock.classList.add('hide');
+    modalBlock.innerHTML = '';
+    });
+  };
 };
 
 const showPokemon = (pokemonList) => {
@@ -133,4 +131,3 @@ originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });
-

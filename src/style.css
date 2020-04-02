@@ -143,7 +143,7 @@ body {
     border-radius: 50px;
     flex-direction: column;
 }
-/* agregado*/
+
 .close{
     color: #aaa;
     font-size: 28px;
@@ -156,11 +156,7 @@ body {
 .closePopup{
     text-decoration: none;
     left: 95%;
-}/**/
-
-.ocultar{visibility: hidden;}
-
-.mostrar{visibility: visible;}
+}
 
 .hide{
     display: none;}
@@ -240,12 +236,6 @@ p{
     text-transform: uppercase;
     color: #0A5C0D;
 }
-
-.close {
-    /* close button on more info modal */
-}
-
-/* grid system - mobile first */
 
 .logo-image {
     width: 100%;
