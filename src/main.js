@@ -29,6 +29,9 @@ const resistanceWeaknesses = (pokemon) => {
       <div>${weaknessesList}</div>
     </div>
   `;
+
+
+
   return resistanceAndWeaknesses;
 };
 
@@ -36,14 +39,11 @@ const showMorePokemonInfo = pokemon => () => {
   const modalBlock = document.createElement('div');
   modalBlock.classList.add('modal-block');
   modalBlock.innerHTML = `
-    <div id="modal-section" class="modal-section">
-      <a class="closePopup" href="#"><span class="close">x</span></a>
+    <div id="modal-section" class="modal-section ocultar mostrar">
+      <a class="closePopup" href="#"><span id="close" class="close">x</span></a>
       <section class="modal-pokemon">
         <img src="${pokemon.img}" class="pokemon-big-image">
         <h1 class="pokemon-big-name">${pokemon.name}</h1>
-      </section>
-      <section class="modal-stats">
-        ${resistanceWeaknesses(pokemon)}
       </section>
       <section class="modal-stats">
         ${resistanceWeaknesses(pokemon)}
@@ -52,6 +52,14 @@ const showMorePokemonInfo = pokemon => () => {
     </div>
   `;
   mainContainer.appendChild(modalBlock);
+    const buttonExit = document.getElementById('close');
+
+  if(buttonExit!=null){
+  buttonExit.addEventListener('click', () => {
+  modalBlock.classList.add('hide');
+  modalBlock.innerHTML = '';
+});
+};
 };
 
 const showPokemon = (pokemonList) => {
@@ -65,6 +73,7 @@ const showPokemon = (pokemonList) => {
         `;
     const handleClick = showMorePokemonInfo(pokemon);
     // helper function does currying transform
+
     pokemonCard.addEventListener('click', handleClick);
     mainContainer.appendChild(pokemonCard);
   });
@@ -124,3 +133,4 @@ originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });
+
