@@ -4,6 +4,7 @@ import {
   filterByType,
   orderAlphabetically,
   searchByName,
+  calculateDPS,
 } from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
@@ -32,6 +33,30 @@ const resistanceWeaknesses = (pokemon) => {
   return resistanceAndWeaknesses;
 };
 
+const moveSets = (pokemon) => {
+  let damageSets = '';
+  let quickMoves = '';
+  let specialAttacks = '';
+
+  pokemon['quick-move'].forEach((quickMove) => {
+    quickMoves += `<p ${quickMove.name} <span class="moveset">${(quickMove.damage / quickMove['move-duration-seg']).toFixed(1)}</span></p>`;
+  });
+  pokemon['special-attack'].forEach((specialAttack) => {
+    specialAttacks += `<p ${specialAttack.name} <span class="moveset">${(specialAttack.damage / specialAttack['move-duration-seg']).toFixed(1)}</span></p>`;
+  });
+  damageSets += `
+    <div class="movesets">
+      <p class="modal-quick-moves">QUICK MOVES</h4>
+      ${quickMoves}
+    </div>
+    <div class="movesets">
+      <h4 class="modal-special-attack">SPECIAL ATTACKS</h4>
+      ${specialAttacks}
+    </div>
+    `;
+  return damageSets;
+};
+
 const showMorePokemonInfo = pokemon => () => {
   const modalBlock = document.createElement('div');
   modalBlock.classList.add('modal-block');
@@ -45,7 +70,10 @@ const showMorePokemonInfo = pokemon => () => {
       <section class="modal-stats">
         ${resistanceWeaknesses(pokemon)}
       </section>
-      <section class="modal-movesets"></section>
+      <section class="modal-movesets">
+        ${moveSets(pokemon)}
+        <p class="dps-number">${calculateDPS(pokemon)}</p>
+      </section>
     </div>
   `;
   mainContainer.appendChild(modalBlock);
@@ -131,3 +159,4 @@ originalState.addEventListener('click', () => {
   mainContainer.innerHTML = '';
   showPokemon(data.pokemon);
 });
+
