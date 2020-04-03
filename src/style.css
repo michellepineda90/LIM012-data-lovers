@@ -153,6 +153,15 @@ body {
     top: 1%;
 }
 
+.close:hover {
+    color: #0A5C0D;
+    -webkit-transform: scale(1.10);
+    -moz-transform: scale(1.10);
+    -ms-transform: scale(1.10);
+    -o-transform: scale(1.10);
+    transform: scale(1.10);
+}
+
 .closePopup{
     text-decoration: none;
     left: 95%;
@@ -226,6 +235,10 @@ p{
     align-items: center;
     justify-content: center;
 }
+
+.movesets {
+    width: 100%;
+  }
 
 .hide {
     display: none;
