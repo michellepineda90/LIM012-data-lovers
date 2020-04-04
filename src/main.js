@@ -4,7 +4,6 @@ import {
   filterByType,
   orderAlphabetically,
   searchByName,
-  calculateDPS,
 } from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
@@ -33,28 +32,60 @@ const resistanceWeaknesses = (pokemon) => {
   return resistanceAndWeaknesses;
 };
 
-const moveSets = (pokemon) => {
-  let damageSets = '';
-  let quickMoves = '';
-  let specialAttacks = '';
+const calculateDps = (attack, pokemonType) => {
+  let stab = 1;
+  const attackType = attack.type;
+  const baseDamage = attack['base-damage'];
+  const moveDuration = attack['move-duration-seg'];
+  if (pokemonType.includes(attackType)) {
+    stab = 1.20;
+  }
+  const dps = Math.round((stab * baseDamage) / moveDuration);
+  return dps;
+};
 
-  pokemon['quick-move'].forEach((quickMove) => {
-    quickMoves += `<p ${quickMove.name} <span class="moveset">${(quickMove.damage / quickMove['move-duration-seg']).toFixed(1)}</span></p>`;
+const getAttackInfo = (pokemon) => {
+  // testable function
+  const attacks = pokemon['special-attack'];
+  const pokemonType = pokemon.type;
+  const formattedAttacks = attacks.map((attack) => {
+    return {
+      name: attack.name,
+      dps: calculateDps(attack, pokemonType),
+      eps: -4,
+    };
   });
-  pokemon['special-attack'].forEach((specialAttack) => {
-    specialAttacks += `<p ${specialAttack.name} <span class="moveset">${(specialAttack.damage / specialAttack['move-duration-seg']).toFixed(1)}</span></p>`;
-  });
-  damageSets += `
-    <div class="movesets">
-      <p class="modal-quick-moves">QUICK MOVES</h4>
-      ${quickMoves}
-    </div>
-    <div class="movesets">
-      <h4 class="modal-special-attack">SPECIAL ATTACKS</h4>
-      ${specialAttacks}
-    </div>
+  return formattedAttacks;
+};
+
+const renderMovesets = (pokemon) => {
+  let output = `
+    <table>
+      <tr>
+        <th>Special Attack</th>
+        <th>DPS</th>
+        <th>EPS</th>
+      </tr>
+  `;
+  const attacks = getAttackInfo(pokemon);
+  attacks.forEach((attack) => {
+    output += `
+      <tr>
+        <td>${attack.name}</td>
+        <td>${attack.dps}</td>
+        <td>${attack.eps}</td>
+      </tr>
     `;
-  return damageSets;
+  });
+  output += '</table>';
+
+  const movesetTable = `
+    <table>  
+      ${headers}
+      ${body}
+    </table>
+  `;
+  return movesetTable;
 };
 
 const showMorePokemonInfo = pokemon => () => {
@@ -71,21 +102,19 @@ const showMorePokemonInfo = pokemon => () => {
         ${resistanceWeaknesses(pokemon)}
       </section>
       <section class="modal-movesets">
-        ${moveSets(pokemon)}
-        <p class="dps-number">${calculateDPS(pokemon)}</p>
+        ${renderMovesets(pokemon)}
       </section>
     </div>
   `;
   mainContainer.appendChild(modalBlock);
-  
-  const buttonExit = document.getElementById('close');
 
-  if(buttonExit!=null){
+  const buttonExit = document.getElementById('close');
+  if (buttonExit != null) {
     buttonExit.addEventListener('click', () => {
-    modalBlock.classList.add('hide');
-    modalBlock.innerHTML = '';
+      modalBlock.classList.add('hide');
+      modalBlock.innerHTML = '';
     });
-  };
+  }
 };
 
 const showPokemon = (pokemonList) => {
@@ -160,3 +189,16 @@ originalState.addEventListener('click', () => {
   showPokemon(data.pokemon);
 });
 
+  // const baseDamage = arr.forEach(elem => elem['base-damage']);
+  // const moveDuration = arr.forEach(elem => elem['move-duration-seg']);
+//   const damageByAttack = pokemon.map((dps) => {
+//     damageByAttack = parseFloat(dps);
+//     const baseDamage = elem['base-damage'];
+//     const moveSeg = elem['move-duration-seg'];
+
+//     DPS por ataque = (baseDamage * stab) / moveSeg; 
+//     necesario tanto para quick move y special attack y la suma de ambos
+//     es lo que va en el cuadro : const totalDps = damageByAttack.reduce((dps, dps1) => dps + dps1);
+//   const promTotalDps = (totalDps / damageByAttack.length).toFixed(1);
+//   return promTotalDps;
+// };
