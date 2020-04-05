@@ -10,13 +10,20 @@ export const calculateDps = (attack, pokemonType) => {
   return dps;
 };
 
+export const calculateEps = (attack) => {
+  const moveDuration = attack['move-duration-seg'];
+  const energy = attack.energy;
+  const eps = Math.round(energy / moveDuration);
+  return eps;
+};
+
 export const getAttackInfo = (pokemon) => {
   const attacks = pokemon['special-attack'];
   const pokemonType = pokemon.type;
   const formattedAttacks = attacks.map(attack => ({
     name: attack.name,
     dps: calculateDps(attack, pokemonType),
-    eps: -4,
+    eps: calculateEps(attack),
   }));
   return formattedAttacks;
 };

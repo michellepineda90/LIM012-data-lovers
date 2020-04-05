@@ -2,12 +2,13 @@ import {
   orderAlphabetically,
   filterByType,
   searchByName,
-} from '../src/utils.js';
+} from '../src/utils/arrays.js';
 
 import {
   calculateDps,
+  calculateEps,
   getAttackInfo,
-} from '../src/pokemon-functions.js';
+} from '../src/utils/pokemonUtils.js';
 
 const dummyPokemonList = [
   {
@@ -169,12 +170,22 @@ describe('calculateDps', () => {
   });
 });
 
+describe('calculateEps', () => {
+  it('is a function', () => {
+    expect(typeof calculateEps).toBe('function');
+  });
+
+  it('returns an number that represents EPS per attack', () => {
+    expect(calculateEps(withStab)).toEqual(-22);
+  });
+});
+
 describe('getAttackInfo', () => {
   it('is a function', () => {
     expect(typeof getAttackInfo).toBe('function');
   });
 
   it('returns an array of objects containing the name, dps and eps per pokemon', () => {
-    expect(getAttackInfo(pokemon)).toEqual([{ name: 'sludge bomb', dps: 42, eps: -4 }]);
+    expect(getAttackInfo(pokemon)).toEqual([{ name: 'sludge bomb', dps: 42, eps: -22 }]);
   });
 });

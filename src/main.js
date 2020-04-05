@@ -2,13 +2,13 @@ import data from './data/pokemon/pokemon.js';
 
 import {
   getAttackInfo,
-} from './pokemon-functions.js';
+} from './utils/pokemonUtils.js';
 
 import {
   filterByType,
   orderAlphabetically,
   searchByName,
-} from './utils.js';
+} from './utils/arrays.js';
 
 const mainContainer = document.querySelector('.stack');
 
@@ -40,7 +40,7 @@ const renderMovesetsTable = (pokemon) => {
   let body = '';
   const headers = `
       <tr>
-        <th>Special Attack</th>
+        <th>SPECIAL ATTACK</th>
         <th>DPS</th>
         <th>EPS</th>
       </tr>
@@ -49,7 +49,7 @@ const renderMovesetsTable = (pokemon) => {
   attacks.forEach((attack) => {
     body += `
       <tr>
-        <td>${attack.name}</td>
+        <td>${attack.name.toUpperCase()}</td>
         <td>${attack.dps}</td>
         <td>${attack.eps}</td>
       </tr>
