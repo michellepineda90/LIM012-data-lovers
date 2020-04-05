@@ -4,6 +4,11 @@ import {
   searchByName,
 } from '../src/utils.js';
 
+import {
+  calculateDps,
+  getAttackInfo,
+} from '../src/pokemon-functions.js';
+
 const dummyPokemonList = [
   {
     num: 1,
@@ -77,6 +82,30 @@ const bugPokemonList = [
   },
 ];
 
+const pokemonAttackList = [
+  {
+    name: 'sludge bomb',
+    type: 'poison',
+    'base-damage': '80',
+    energy: '-50',
+    'move-duration-seg': '2.3',
+  },
+  {
+    name: 'seed bomb',
+    type: 'grass',
+    'base-damage': '55',
+    energy: '-33',
+    'move-duration-seg': '2.1',
+  },
+  {
+    name: 'power whip',
+    type: 'grass',
+    'base-damage': '90',
+    energy: '-50',
+    'move-duration-seg': '2.6',
+  },
+];
+
 describe('orderAlphabetically', () => {
   it('is a function', () => {
     expect(typeof orderAlphabetically).toBe('function');
@@ -116,5 +145,25 @@ describe('searchByName', () => {
 
   it('returns an array of objects containing only the pokemon with the chosen name', () => {
     expect(searchByName(dummyPokemonList, 'caterpie')).toEqual(bugPokemonList);
+  });
+});
+
+describe('calculateDps', () => {
+  it('is a function', () => {
+    expect(typeof calculateDps).toBe('function');
+  });
+
+  it('returns an array of objects containing the attacks of the chosen pokemon', () => {
+    expect(getAttackInfo(pokemonAttackList)).toEqual(['sludge bomb', 'seed bomb', 'power whip']);
+  });
+});
+
+describe('getAttackInfo', () => {
+  it('is a function', () => {
+    expect(typeof getAttackInfo).toBe('function');
+  });
+
+  it('returns an array of objects containing the attacks of the chosen pokemon', () => {
+    expect(getAttackInfo(pokemonAttackList)).toEqual(['sludge bomb', 'seed bomb', 'power whip']);
   });
 });

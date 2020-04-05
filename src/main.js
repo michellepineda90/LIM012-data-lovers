@@ -1,6 +1,10 @@
 import data from './data/pokemon/pokemon.js';
 
 import {
+  getAttackInfo,
+} from './pokemon-functions.js';
+
+import {
   filterByType,
   orderAlphabetically,
   searchByName,
@@ -8,7 +12,7 @@ import {
 
 const mainContainer = document.querySelector('.stack');
 
-const resistanceWeaknesses = (pokemon) => {
+const renderResistanceWeaknesses = (pokemon) => {
   let resistanceAndWeaknesses = '';
   let resistanceList = '';
   let weaknessesList = '';
@@ -32,35 +36,9 @@ const resistanceWeaknesses = (pokemon) => {
   return resistanceAndWeaknesses;
 };
 
-const calculateDps = (attack, pokemonType) => {
-  let stab = 1;
-  const attackType = attack.type;
-  const baseDamage = attack['base-damage'];
-  const moveDuration = attack['move-duration-seg'];
-  if (pokemonType.includes(attackType)) {
-    stab = 1.20;
-  }
-  const dps = Math.round((stab * baseDamage) / moveDuration);
-  return dps;
-};
-
-const getAttackInfo = (pokemon) => {
-  // testable function
-  const attacks = pokemon['special-attack'];
-  const pokemonType = pokemon.type;
-  const formattedAttacks = attacks.map((attack) => {
-    return {
-      name: attack.name,
-      dps: calculateDps(attack, pokemonType),
-      eps: -4,
-    };
-  });
-  return formattedAttacks;
-};
-
-const renderMovesets = (pokemon) => {
-  let output = `
-    <table>
+const renderMovesetsTable = (pokemon) => {
+  let body = '';
+  const headers = `
       <tr>
         <th>Special Attack</th>
         <th>DPS</th>
@@ -69,7 +47,7 @@ const renderMovesets = (pokemon) => {
   `;
   const attacks = getAttackInfo(pokemon);
   attacks.forEach((attack) => {
-    output += `
+    body += `
       <tr>
         <td>${attack.name}</td>
         <td>${attack.dps}</td>
@@ -77,8 +55,6 @@ const renderMovesets = (pokemon) => {
       </tr>
     `;
   });
-  output += '</table>';
-
   const movesetTable = `
     <table>  
       ${headers}
@@ -99,10 +75,10 @@ const showMorePokemonInfo = pokemon => () => {
         <h1 class="pokemon-big-name">${pokemon.name}</h1>
       </section>
       <section class="modal-stats">
-        ${resistanceWeaknesses(pokemon)}
+        ${renderResistanceWeaknesses(pokemon)}
       </section>
       <section class="modal-movesets">
-        ${renderMovesets(pokemon)}
+        ${renderMovesetsTable(pokemon)}
       </section>
     </div>
   `;
@@ -118,6 +94,7 @@ const showMorePokemonInfo = pokemon => () => {
 };
 
 const showPokemon = (pokemonList) => {
+  mainContainer.innerHTML = '';
   pokemonList.forEach((pokemon) => {
     const pokemonCard = document.createElement('div');
     pokemonCard.classList.add('pokemon-card');
@@ -127,8 +104,6 @@ const showPokemon = (pokemonList) => {
         <p class= "pokemon-name">${pokemon.name}</p>
         `;
     const handleClick = showMorePokemonInfo(pokemon);
-    // helper function does currying transform
-
     pokemonCard.addEventListener('click', handleClick);
     mainContainer.appendChild(pokemonCard);
   });
@@ -140,7 +115,6 @@ const showByType = document.querySelector('#order-by-type');
 
 showByType.addEventListener('change', () => {
   const chosenType = showByType.value;
-  mainContainer.innerHTML = '';
   showPokemon(filterByType(data.pokemon, chosenType));
   if (chosenType === 'all-types') {
     showPokemon(data.pokemon);
@@ -151,7 +125,6 @@ const orderAlphabeticallySelect = document.querySelector('#order-alphabetically'
 
 orderAlphabeticallySelect.addEventListener('change', () => {
   const selectedOrder = orderAlphabetically.value;
-  mainContainer.innerHTML = '';
   showPokemon(orderAlphabetically(data.pokemon, selectedOrder));
 });
 
@@ -163,14 +136,13 @@ image.addEventListener('click', (clickEvent) => {
   clickEvent.target.closest('form').dispatchEvent(domEvent);
 });
 
-const form = document.querySelector('.search-form');
+const search = document.querySelector('.search-form');
 
 const chosenName = document.getElementById('search-by-name');
 
-form.addEventListener('submit', (event) => {
+search.addEventListener('submit', (event) => {
   event.preventDefault();
   const pokemonName = chosenName.value.toLowerCase();
-  mainContainer.innerHTML = '';
   showPokemon(searchByName(data.pokemon, pokemonName));
   if (!mainContainer.innerHTML) {
     mainContainer.innerHTML = `
@@ -181,24 +153,3 @@ form.addEventListener('submit', (event) => {
     `;
   }
 });
-
-const originalState = document.getElementById('logo-image');
-
-originalState.addEventListener('click', () => {
-  mainContainer.innerHTML = '';
-  showPokemon(data.pokemon);
-});
-
-  // const baseDamage = arr.forEach(elem => elem['base-damage']);
-  // const moveDuration = arr.forEach(elem => elem['move-duration-seg']);
-//   const damageByAttack = pokemon.map((dps) => {
-//     damageByAttack = parseFloat(dps);
-//     const baseDamage = elem['base-damage'];
-//     const moveSeg = elem['move-duration-seg'];
-
-//     DPS por ataque = (baseDamage * stab) / moveSeg; 
-//     necesario tanto para quick move y special attack y la suma de ambos
-//     es lo que va en el cuadro : const totalDps = damageByAttack.reduce((dps, dps1) => dps + dps1);
-//   const promTotalDps = (totalDps / damageByAttack.length).toFixed(1);
-//   return promTotalDps;
-// };
