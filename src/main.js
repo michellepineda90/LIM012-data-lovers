@@ -26,11 +26,11 @@ const renderResistanceWeaknesses = (pokemon) => {
   resistanceAndWeaknesses += `
     <div class="res-weak">
       <p class="modal-resistance">RESISTANCE</p>
-      <div>${resistanceList}</div>
+      <div class="rectangle">${resistanceList}</div>
     </div>
     <div class="res-weak">
       <p class="modal-weakness">WEAKNESSES</p>
-      <div>${weaknessesList}</div>
+      <div class="rectangle">${weaknessesList}</div>
     </div>
   `;
   return resistanceAndWeaknesses;
@@ -72,7 +72,8 @@ const showMorePokemonInfo = pokemon => () => {
       <a class="closePopup" href="#"><span id="close" class="close">x</span></a>
       <section class="modal-pokemon">
         <img src="${pokemon.img}" class="pokemon-big-image">
-        <h1 class="pokemon-big-name">${pokemon.name}</h1>
+        <h1>${pokemon.name}</h1>
+        <h2>${pokemon.about}</h2>
       </section>
       <section class="modal-stats">
         ${renderResistanceWeaknesses(pokemon)}
@@ -92,26 +93,6 @@ const showMorePokemonInfo = pokemon => () => {
     });
   }
 };
-
-
-const calculateDPS = (pokemon) => {
-
-  console.log(pokemon['special-attack'])
-};
- /*const damageByAttack = pokemon.forEach(dps) => {
-   damageByAttack = parseFloat(dps);
-   const baseDamage = elem['base-damage'];
-   const moveSeg = elem['move-duration-seg'];
-   return (baseDamage * 1.25) / moveSeg;
-   
- });
-
- console.log(damageByAttack);
-
- const totalDps = damageByAttack.reduce((dps, dps1) => dps + dps1);
- const promTotalDps = (totalDps / damageByAttack.length).toFixed(1);
- return promTotalDps;
-};*/
 
 const showPokemon = (pokemonList) => {
   mainContainer.innerHTML = '';

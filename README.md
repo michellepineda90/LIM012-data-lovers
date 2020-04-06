@@ -87,10 +87,6 @@ escritorio y del mobile.
 Permite que el usuario tenga toda la información necesaria y en 
 un sólo lugar para poder llegar a ser el mejor maestro pokémon.
 
-### Mapa del sitio web
-
-
-
 ### Historias de usuario
 
 Se creó 6 historias de usuario para la realización de este proyecto,

@@ -16,6 +16,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 8px;
 }
 
 .filter-bar {
@@ -193,10 +194,20 @@ h1{
     font-style: normal;
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: justify;
     color: #0A5C0D;
     justify-content: center;
     text-transform: uppercase;
+    font-size: 2em;
+}
+
+h2{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #333333;
+    text-align: justify;
+    width: 80%;
 }
 
 .modal-stats{
@@ -219,6 +230,11 @@ h1{
     justify-content: center;
 }
 
+.rectangle{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 p{
     font-weight: bold;
     font-size: 14px;
@@ -227,13 +243,6 @@ p{
     align-items: center;
     text-align: center;
     color: #000000;
-}
-
-.resist-weak-img {
-    width: 13%;
-    height: 13%;
-    padding: 3px;
-    margin:2px;
 }
 
 .res-weak {
@@ -247,18 +256,26 @@ p{
     justify-content: center;
 }
 
+table{
+    border: 1px solid #000000;
+    background-color: white;
+    border-spacing: 0;
+}
+
+td{
+    border: 1px solid #000000;
+}
+
+th{
+    border: 1px solid #000000;
+}
+
 .movesets {
     width: 100%;
   }
 
 .hide {
     display: none;
-}
-
-.pokemon-big-name {
-    font-size: 2em;
-    text-transform: uppercase;
-    color: #0A5C0D;
 }
 
 .logo-image {
@@ -328,6 +345,7 @@ p{
 .stack {
     flex: 0 1 85%; 
     margin: auto;
+    margin-left: 8%;
 }
 
 .pokemon-card {
@@ -350,7 +368,7 @@ p{
 .pokemon-name {
     width: auto;
     height: auto;
-    font-size: 0.8em;
+    font-size: 0.63em;
 }
 
 /* Susana */
@@ -363,12 +381,17 @@ p{
 }
 
 h1{
-    margin-block-end: 5em;
+    margin-block-end: 0.5em;
+}
+
+h2{
+    margin-block-end: 10em;
+    font-size: 0.75em;
 }
 
 .modal-pokemon {
     width: 100%;
-    height: 30%;
+    height: 38%;
 }
 
 .pokemon-big-image{
@@ -376,10 +399,27 @@ h1{
     height: 150px;
 }
         
+.resist-weak-img {
+    width: 17%;
+    padding: 3px;
+    margin:2px;
+}
 
 .modal-stats, .modal-movesets {
     width:80%;
     height:45%;
+}
+
+table{
+    width:100%;
+}
+
+td{
+   font-size: 0.75em;
+}
+
+th{
+    font-size: 0.85em;
 }
 
 .modal-resistance, .modal-weakness{
@@ -466,7 +506,7 @@ h1{
     .stack {
         flex: 0 1 80%; 
         margin-left: 8%;
-        margin-right: 8%; 
+        margin-right: 5%; 
     }
 
     .pokemon-card {
@@ -515,6 +555,7 @@ h1{
         width: 33%;
         height:70%;
         border: 2px solid #000000;
+        top:150px;
     }
 
     .modal-pokemon {
@@ -522,13 +563,40 @@ h1{
         height: 30%;
     }        
 
+    h1{
+        margin-block-end: 0.8em;
+    }
+    
+    h2{
+        margin-block-end: 8em;
+        font-size: 1em;
+    }
+
     .modal-stats, .modal-movesets {
         width:80%;
         height:45%;
     }
+
+    .resist-weak-img {
+        width: 13%;
+        padding: 3px;
+        margin:2px;
+    }
+
+    table{
+        width:90%;
+    }
+    
+    td{
+       font-size: 1em;
+    }
+    
+    th{
+        font-size: 0.85em;
+    }
     
     .modal-resistance, .modal-weakness{
         width:80%;
-        height:40%;
+        height:30%;
     }
 }

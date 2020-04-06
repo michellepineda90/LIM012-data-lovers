@@ -17,8 +17,4 @@ export const orderAlphabetically = (arr, condition) => {
   return newArr;
 };
 
-<<<<<<< HEAD:src/utils.js
 export const searchByName = (arr, name) => arr.filter(obj => obj.name.includes(name));
-=======
-export const searchByName = (arr, name) => arr.filter(obj => obj.name.includes(name));
->>>>>>> 2b2f454609ef21d67d54b16d579bc41670fe9e92:src/utils/arrays.js
