@@ -4,7 +4,6 @@ import {
   filterByType,
   orderAlphabetically,
   searchByName,
-  calculateDPS,
 } from './utils.js';
 
 const mainContainer = document.querySelector('.stack');
@@ -87,6 +86,26 @@ const showMorePokemonInfo = pokemon => () => {
     });
   };
 };
+
+
+const calculateDPS = (pokemon) => {
+
+  console.log(pokemon['special-attack'])
+};
+ /*const damageByAttack = pokemon.forEach(dps) => {
+   damageByAttack = parseFloat(dps);
+   const baseDamage = elem['base-damage'];
+   const moveSeg = elem['move-duration-seg'];
+   return (baseDamage * 1.25) / moveSeg;
+   
+ });
+
+ console.log(damageByAttack);
+
+ const totalDps = damageByAttack.reduce((dps, dps1) => dps + dps1);
+ const promTotalDps = (totalDps / damageByAttack.length).toFixed(1);
+ return promTotalDps;
+};*/
 
 const showPokemon = (pokemonList) => {
   pokemonList.forEach((pokemon) => {
