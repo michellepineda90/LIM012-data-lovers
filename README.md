@@ -221,18 +221,6 @@ como para mobile.
 
   ![Mobile hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu2-papel.PNG)
 
-<<<<<<< HEAD
-=======
-  ![Mobile hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu3-papel.PNG)
-
-  ![Mobile hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu4-papel.PNG)
-
-  ![Mobile hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu5-papel.PNG)
-
-  ![Mobile hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu6-papel.PNG)
-
-
->>>>>>> 05a57bf7910405fac1c378cdbbc79a389878fc2d
 ### Feedback recibido por usuarios
 
 Entrevistamos a varios tipos de usuario para poder obtener un feedback más 

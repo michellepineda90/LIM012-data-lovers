@@ -2,7 +2,13 @@ import {
   orderAlphabetically,
   filterByType,
   searchByName,
-} from '../src/utils.js';
+} from '../src/utils/arrays.js';
+
+import {
+  calculateDps,
+  calculateEps,
+  getAttackInfo,
+} from '../src/utils/pokemonUtils.js';
 
 const dummyPokemonList = [
   {
@@ -77,6 +83,37 @@ const bugPokemonList = [
   },
 ];
 
+const pokemonType = ['grass', 'poison'];
+
+const withStab = {
+  name: 'sludge bomb',
+  type: 'poison',
+  'base-damage': '80',
+  energy: '-50',
+  'move-duration-seg': '2.3',
+};
+
+const withoutStab = {
+  name: 'sludge bomb',
+  type: 'electric',
+  'base-damage': '80',
+  energy: '-50',
+  'move-duration-seg': '2.3',
+};
+
+const pokemon = {
+  type: ['grass', 'poison'],
+  'special-attack': [
+    {
+      name: 'sludge bomb',
+      type: 'poison',
+      'base-damage': '80',
+      energy: '-50',
+      'move-duration-seg': '2.3',
+    },
+  ],
+};
+
 describe('orderAlphabetically', () => {
   it('is a function', () => {
     expect(typeof orderAlphabetically).toBe('function');
@@ -116,5 +153,39 @@ describe('searchByName', () => {
 
   it('returns an array of objects containing only the pokemon with the chosen name', () => {
     expect(searchByName(dummyPokemonList, 'caterpie')).toEqual(bugPokemonList);
+  });
+});
+
+describe('calculateDps', () => {
+  it('is a function', () => {
+    expect(typeof calculateDps).toBe('function');
+  });
+
+  it('returns an number that represents DPS per attack if STAB applies', () => {
+    expect(calculateDps(withStab, pokemonType)).toEqual(42);
+  });
+
+  it('returns an number that represents DPS per attack if STAB does not apply', () => {
+    expect(calculateDps(withoutStab, pokemonType)).toEqual(35);
+  });
+});
+
+describe('calculateEps', () => {
+  it('is a function', () => {
+    expect(typeof calculateEps).toBe('function');
+  });
+
+  it('returns an number that represents EPS per attack', () => {
+    expect(calculateEps(withStab)).toEqual(-22);
+  });
+});
+
+describe('getAttackInfo', () => {
+  it('is a function', () => {
+    expect(typeof getAttackInfo).toBe('function');
+  });
+
+  it('returns an array of objects containing the name, dps and eps per pokemon', () => {
+    expect(getAttackInfo(pokemon)).toEqual([{ name: 'sludge bomb', dps: 42, eps: -22 }]);
   });
 });

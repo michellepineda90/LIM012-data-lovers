@@ -113,6 +113,17 @@ body {
     display: block;
 }
 
+.modal-quick-moves {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+}
+
+.quick-moves {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 /* Susana */
 
 .modal-block {
