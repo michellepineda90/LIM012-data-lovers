@@ -63,7 +63,6 @@ continuación:
 
 - buddy-distance-km: distancia en km que debe caminar el usuario 
 con un pokémon con buddy para obtener 1 caramelo de dicho pokémon.
-- evolution: línea de evolución, cantidad de caramelos para evolucionar. 
 - stats: base de ataque,defensa, salud, max CP(combat points) 
 y max HP (health points).
 - resistant: a qué tipos de pokémon es resistente.
@@ -87,10 +86,6 @@ escritorio y del mobile.
 
 Permite que el usuario tenga toda la información necesaria y en 
 un sólo lugar para poder llegar a ser el mejor maestro pokémon.
-
-### Mapa del sitio web
-
-Trabajando en ello.
 
 ### Historias de usuario
 
@@ -418,7 +413,7 @@ https://trello.com/b/HSpK0f78/data-lovers-pokemon
 
 ### Zeplin
 
-Trabajando en ello.
+https://zpl.io/2vpemXJ
 
 ## 6. Checklist
 
@@ -434,7 +429,7 @@ Trabajando en ello.
   `README.md`.
 * [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
+* [x] Incluye link a Zeplin en `README.md`.
 * [x] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [x] UI: Muestra lista y/o tabla con datos y/o indicadores.

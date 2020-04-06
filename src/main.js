@@ -26,11 +26,11 @@ const renderResistanceWeaknesses = (pokemon) => {
   resistanceAndWeaknesses += `
     <div class="res-weak">
       <p class="modal-resistance">RESISTANCE</p>
-      <div>${resistanceList}</div>
+      <div class="rectangle">${resistanceList}</div>
     </div>
     <div class="res-weak">
       <p class="modal-weakness">WEAKNESSES</p>
-      <div>${weaknessesList}</div>
+      <div class="rectangle">${weaknessesList}</div>
     </div>
   `;
   return resistanceAndWeaknesses;
@@ -72,7 +72,8 @@ const showMorePokemonInfo = pokemon => () => {
       <a class="closePopup" href="#"><span id="close" class="close">x</span></a>
       <section class="modal-pokemon">
         <img src="${pokemon.img}" class="pokemon-big-image">
-        <h1 class="pokemon-big-name">${pokemon.name}</h1>
+        <h1>${pokemon.name}</h1>
+        <h2>${pokemon.about}</h2>
       </section>
       <section class="modal-stats">
         ${renderResistanceWeaknesses(pokemon)}
