@@ -63,7 +63,6 @@ continuación:
 
 - buddy-distance-km: distancia en km que debe caminar el usuario 
 con un pokémon con buddy para obtener 1 caramelo de dicho pokémon.
-- evolution: línea de evolución, cantidad de caramelos para evolucionar. 
 - stats: base de ataque,defensa, salud, max CP(combat points) 
 y max HP (health points).
 - resistant: a qué tipos de pokémon es resistente.
@@ -90,7 +89,7 @@ un sólo lugar para poder llegar a ser el mejor maestro pokémon.
 
 ### Mapa del sitio web
 
-Trabajando en ello.
+
 
 ### Historias de usuario
 
@@ -221,18 +220,6 @@ como para mobile.
 
   ![Mobile hu2-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu2-papel.PNG)
 
-<<<<<<< HEAD
-=======
-  ![Mobile hu3-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu3-papel.PNG)
-
-  ![Mobile hu4-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu4-papel.PNG)
-
-  ![Mobile hu5-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu5-papel.PNG)
-
-  ![Mobile hu6-Papel](https://github.com/weirdkidwithwindows/LIM012-data-lovers/blob/master/src/img/mobile-hu6-papel.PNG)
-
-
->>>>>>> 05a57bf7910405fac1c378cdbbc79a389878fc2d
 ### Feedback recibido por usuarios
 
 Entrevistamos a varios tipos de usuario para poder obtener un feedback más 
@@ -430,7 +417,7 @@ https://trello.com/b/HSpK0f78/data-lovers-pokemon
 
 ### Zeplin
 
-Trabajando en ello.
+https://zpl.io/2vpemXJ
 
 ## 6. Checklist
 
@@ -446,7 +433,7 @@ Trabajando en ello.
   `README.md`.
 * [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
+* [x] Incluye link a Zeplin en `README.md`.
 * [x] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [x] UI: Muestra lista y/o tabla con datos y/o indicadores.

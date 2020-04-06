@@ -1,14 +1,18 @@
 import data from './data/pokemon/pokemon.js';
 
 import {
+  getAttackInfo,
+} from './utils/pokemonUtils.js';
+
+import {
   filterByType,
   orderAlphabetically,
   searchByName,
-} from './utils.js';
+} from './utils/arrays.js';
 
 const mainContainer = document.querySelector('.stack');
 
-const resistanceWeaknesses = (pokemon) => {
+const renderResistanceWeaknesses = (pokemon) => {
   let resistanceAndWeaknesses = '';
   let resistanceList = '';
   let weaknessesList = '';
@@ -32,28 +36,32 @@ const resistanceWeaknesses = (pokemon) => {
   return resistanceAndWeaknesses;
 };
 
-const moveSets = (pokemon) => {
-  let damageSets = '';
-  let quickMoves = '';
-  let specialAttacks = '';
-
-  pokemon['quick-move'].forEach((quickMove) => {
-    quickMoves += `<p ${quickMove.name} <span class="moveset">${(quickMove.damage / quickMove['move-duration-seg']).toFixed(1)}</span></p>`;
-  });
-  pokemon['special-attack'].forEach((specialAttack) => {
-    specialAttacks += `<p ${specialAttack.name} <span class="moveset">${(specialAttack.damage / specialAttack['move-duration-seg']).toFixed(1)}</span></p>`;
-  });
-  damageSets += `
-    <div class="movesets">
-      <p class="modal-quick-moves">QUICK MOVES</h4>
-      ${quickMoves}
-    </div>
-    <div class="movesets">
-      <h4 class="modal-special-attack">SPECIAL ATTACKS</h4>
-      ${specialAttacks}
-    </div>
+const renderMovesetsTable = (pokemon) => {
+  let body = '';
+  const headers = `
+      <tr>
+        <th>SPECIAL ATTACK</th>
+        <th>DPS</th>
+        <th>EPS</th>
+      </tr>
+  `;
+  const attacks = getAttackInfo(pokemon);
+  attacks.forEach((attack) => {
+    body += `
+      <tr>
+        <td>${attack.name.toUpperCase()}</td>
+        <td>${attack.dps}</td>
+        <td>${attack.eps}</td>
+      </tr>
     `;
-  return damageSets;
+  });
+  const movesetTable = `
+    <table>  
+      ${headers}
+      ${body}
+    </table>
+  `;
+  return movesetTable;
 };
 
 const showMorePokemonInfo = pokemon => () => {
@@ -67,24 +75,22 @@ const showMorePokemonInfo = pokemon => () => {
         <h1 class="pokemon-big-name">${pokemon.name}</h1>
       </section>
       <section class="modal-stats">
-        ${resistanceWeaknesses(pokemon)}
+        ${renderResistanceWeaknesses(pokemon)}
       </section>
       <section class="modal-movesets">
-        ${moveSets(pokemon)}
-        <p class="dps-number">${calculateDPS(pokemon)}</p>
+        ${renderMovesetsTable(pokemon)}
       </section>
     </div>
   `;
   mainContainer.appendChild(modalBlock);
-  
-  const buttonExit = document.getElementById('close');
 
-  if(buttonExit!=null){
+  const buttonExit = document.getElementById('close');
+  if (buttonExit != null) {
     buttonExit.addEventListener('click', () => {
-    modalBlock.classList.add('hide');
-    modalBlock.innerHTML = '';
+      modalBlock.classList.add('hide');
+      modalBlock.innerHTML = '';
     });
-  };
+  }
 };
 
 
@@ -108,6 +114,7 @@ const calculateDPS = (pokemon) => {
 };*/
 
 const showPokemon = (pokemonList) => {
+  mainContainer.innerHTML = '';
   pokemonList.forEach((pokemon) => {
     const pokemonCard = document.createElement('div');
     pokemonCard.classList.add('pokemon-card');
@@ -117,8 +124,6 @@ const showPokemon = (pokemonList) => {
         <p class= "pokemon-name">${pokemon.name}</p>
         `;
     const handleClick = showMorePokemonInfo(pokemon);
-    // helper function does currying transform
-
     pokemonCard.addEventListener('click', handleClick);
     mainContainer.appendChild(pokemonCard);
   });
@@ -130,7 +135,6 @@ const showByType = document.querySelector('#order-by-type');
 
 showByType.addEventListener('change', () => {
   const chosenType = showByType.value;
-  mainContainer.innerHTML = '';
   showPokemon(filterByType(data.pokemon, chosenType));
   if (chosenType === 'all-types') {
     showPokemon(data.pokemon);
@@ -141,7 +145,6 @@ const orderAlphabeticallySelect = document.querySelector('#order-alphabetically'
 
 orderAlphabeticallySelect.addEventListener('change', () => {
   const selectedOrder = orderAlphabetically.value;
-  mainContainer.innerHTML = '';
   showPokemon(orderAlphabetically(data.pokemon, selectedOrder));
 });
 
@@ -153,14 +156,13 @@ image.addEventListener('click', (clickEvent) => {
   clickEvent.target.closest('form').dispatchEvent(domEvent);
 });
 
-const form = document.querySelector('.search-form');
+const search = document.querySelector('.search-form');
 
 const chosenName = document.getElementById('search-by-name');
 
-form.addEventListener('submit', (event) => {
+search.addEventListener('submit', (event) => {
   event.preventDefault();
   const pokemonName = chosenName.value.toLowerCase();
-  mainContainer.innerHTML = '';
   showPokemon(searchByName(data.pokemon, pokemonName));
   if (!mainContainer.innerHTML) {
     mainContainer.innerHTML = `
@@ -171,11 +173,3 @@ form.addEventListener('submit', (event) => {
     `;
   }
 });
-
-const originalState = document.getElementById('logo-image');
-
-originalState.addEventListener('click', () => {
-  mainContainer.innerHTML = '';
-  showPokemon(data.pokemon);
-});
-
