@@ -1,5 +1,25 @@
-import data from './data/pokemon/pokemon.js';
+// import data from './data/pokemon/pokemon.js';
 
+// fetch('../src/data/pokemon/pokemon.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   });
+
+const POKEMON_API = './data/pokemon/pokemon.json';
+
+const promise = fetch(POKEMON_API);
+
+promise
+  .then((response) => {
+    const processingPromise = response.json();
+    return processingPromise;
+  })
+  .then((processedResponse) => {
+    console.log(processedResponse);
+  });
+
+/*
 import {
   getAttackInfo,
 } from './utils/pokemonUtils.js';
@@ -154,3 +174,4 @@ search.addEventListener('submit', (event) => {
     `;
   }
 });
+*/
